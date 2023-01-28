@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empresa_parceiras",
+  "info": {
+    "singularName": "empresa-parceira",
+    "pluralName": "empresa-parceiras",
+    "displayName": "Empresa Parceira",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "atuacoes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::atuacao.atuacao",
+      "mappedBy": "empresaParceira"
+    }
+  }
+}

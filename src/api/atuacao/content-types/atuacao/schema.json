@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "atuacoes",
+  "info": {
+    "singularName": "atuacao",
+    "pluralName": "atuacoes",
+    "displayName": "Atuações",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "atuacao": {
+      "type": "string"
+    },
+    "empresaParceira": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa-parceira.empresa-parceira",
+      "inversedBy": "atuacoes"
+    },
+    "trabalho": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work.work",
+      "inversedBy": "atuacao"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Cliente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "trabalhos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work.work",
+      "mappedBy": "cliente"
+    },
+    "tipoDePessoa": {
+      "type": "enumeration",
+      "enum": [
+        "PESSOA FISICA",
+        "PESSOA JURIDICA"
+      ],
+      "required": true,
+      "private": true
+    }
+  }
+}

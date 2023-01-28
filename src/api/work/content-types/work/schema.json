@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Trabalhos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "RESIDENCIAL",
+        "COMERCIAL"
+      ]
+    },
+    "area": {
+      "type": "decimal"
+    },
+    "tipoDeConstrucao": {
+      "type": "string"
+    },
+    "dataDoProjeto": {
+      "type": "date"
+    },
+    "dataDaExecucao": {
+      "type": "date"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "fotos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::client.client",
+      "inversedBy": "trabalhos"
+    },
+    "trabalho": {
+      "type": "string"
+    },
+    "atuacao": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::atuacao.atuacao",
+      "mappedBy": "trabalho"
+    }
+  }
+}
